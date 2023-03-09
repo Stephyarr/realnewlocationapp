@@ -1,0 +1,1 @@
+export { defafult as ImageSelector } from "./image-selector/index";
