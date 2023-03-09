@@ -27,7 +27,7 @@ const PlacesNavigator = () => {
         options={({ navigation }) => ({ 
           title: "Direcciones",
           headerRight: () => (
-            <TouchableOpacity onPress={() => navigation.navigate("NewPlace")}>
+            <TouchableOpacity style={{ marginRight: 0 }} onPress={() => navigation.navigate("NewPlace")}>
               <Ionicons name="add" size={24} color={colors.black}/>
             </TouchableOpacity>
           )
