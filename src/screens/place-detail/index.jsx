@@ -1,14 +1,15 @@
-import { ScrollView, View, Text, Image } from "react-native";
+import { ScrollView, Text, View, Image } from "react-native";
 import { useSelector } from "react-redux";
+
 import { MapPreview } from "../../components/index";
 import { styles } from "./styles";
 
-const PlaceDetail = ({ navigation }) => {
+const PlaceDetail = ({ navigation, route }) => {
   const { placeId } = route.params;
   const place = useSelector((state) => state.place.places.find((place) => place.id === placeId));
 
   const parseCoords = JSON.parse(place?.coords);
- 
+
   return (
     <ScrollView style={styles.container}>
       <Image source={{ uri: place.image }} style={styles.image} />

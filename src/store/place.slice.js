@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getPlaces, insertPlace } from "../db";
-import { URL_GEOCODING } from "../utils/maps";
 
+import { getPlaces, insertPlace } from "../db";
 import Place from "../models/places";
+import { URL_GEOCODING } from "../utils/maps";
 
 const initialState = {
   places: [],
@@ -14,7 +14,7 @@ const placeSlice = createSlice({
   reducers: {
     addPlace: (state, action) => {
       const newPlace = new Place(
-      action.payload.id.toString(),
+        action.payload.id.toString(),
         action.payload.title,
         action.payload.image,
         action.payload.address,
@@ -28,7 +28,7 @@ const placeSlice = createSlice({
   },
 });
 
-export const { addPlace } = placeSlice.actions;
+export const { addPlace, setPlaces } = placeSlice.actions;
 
 export const savePlace = (title, image, coords) => {
   return async (dispatch) => {
